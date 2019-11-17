@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Mon compte{% endblock %}
+
+{% block body %}
+
+
+
+          {% if app.user %}
+            You are logged in as {{ app.user.username }},
+          {% endif %}
+
+          {% if app.user %}
+            with the role
+            {% endif %}
+
+          {% for roles in app.user.roles %}
+            {{ roles }}
+          {% endfor %}
+
+          {% if app.user %}
+           for the id {{ app.user.id }} <a href="{{ path('app_logout') }}">Logout</a>
+          {% endif %}
+
+
+
+
+
+{% endblock %}
